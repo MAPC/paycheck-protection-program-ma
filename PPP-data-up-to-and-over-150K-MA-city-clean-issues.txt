@@ -1,0 +1,37 @@
+PPP data issues by column
+
+BusinessName
+	- one is a number? (43108175)
+Address
+	- one is a number? (283)
+	- some all upper case, some regular (just a pet peeve)
+Neighborhood / Area
+	- some are zipcodes, some are addresses, 
+	- some have a trailing comma, or trailing ' MA' or even ' AM'
+	- Manchester and Manchester by the Sea
+	- One is USA
+City
+	- some are zipcodes
+	- Manchester and Manchester by the Sea
+	- One is USA
+	- some I haven't heard of - does this equate to municipality, or is 	it postal city?
+State
+	- 8 are not in Mass; that may explain my last comment
+Zip
+	- same as state
+	- leading zeros have been stripped, I'm looking at you Excel
+NAICSTitle
+	- all blank?
+BusinessType
+	- LLCs have 2 spaces between 'Limited' and 'Liability'
+		- (should probably have a space between 'Company' and '(LLC)' also
+JobsRetained
+	- 500 appears to be a max cap
+CD
+	- a few out of state
+	- 11 are blank (or 'MA -', to be precise)
+
+Other comments
+	- when these go on the data common, I can keep these headers as aliases, but I'll need to at least change 'Neighborhood / Area' to remove non-alphanumeric, non-underscore characters
+	- if we anticipate people using this in GIS, I can limit the headers to 10 characters (limit for shapefiles)
+	- Are the cities = municipality? If so, we should add the town ID column to facilitate joins (this would also render name discrepancies, like Manchester-by-the-Sea largely moot); if not, how are we mapping them by town?
