@@ -10965,4 +10965,64 @@
     ],
     "description": "Mass edit cells in column City"
   }
+ {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Neighborhood / Area",
+          "columnName": "Neighborhood / Area",
+          "query": "BEDFORD",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "City",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MEDFORD"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BEDFORD"
+      }
+    ],
+    "description": "Mass edit cells in column City"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "City",
+          "columnName": "City",
+          "query": "manchester",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "City",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MANCHESTER"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MANCHESTER BY THE SEA"
+      }
+    ],
+    "description": "Mass edit cells in column City"
+  }
 ]
