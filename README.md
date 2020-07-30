@@ -17,4 +17,6 @@ That combined file was then cleaned using Open Refine, project files found [here
  - Remove rows where `City` equals "Keene" (in New Hampshire) or "Pawtucket" (in Rhode Island)
  - Remove many unused columns for easier reading into the map
 
+Unique numeric IDs were assigned to each row to keep track of which rows were removed.
+
  The final data product read into the map is located [here](https://github.com/MAPC/paycheck-protection-program-ma/blob/master/PPP-202-join.csv)
