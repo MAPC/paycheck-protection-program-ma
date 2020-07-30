@@ -4,7 +4,6 @@ library(dplyr)
 urlfile="https://raw.githubusercontent.com/MAPC/paycheck-protection-program-ma/master/PPP-data-up-to-and-over-150K-MA-city-clean.csv"
 
 mydata<-read_csv(url(urlfile))
-mydata <- read.csv("K:/DataServices/Projects/Current_Projects/Data Intake Process/Other (do not enter)/PPP-data-up-to-and-over-150K-MA-city-clean2.csv")
 
 df2 <- read.csv("K:/DataServices/Projects/Current_Projects/Data Intake Process/Other (do not enter)/tabular._datakeys_muni351.csv")
 
