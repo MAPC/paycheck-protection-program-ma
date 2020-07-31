@@ -10,11 +10,11 @@ That combined file was then cleaned using Open Refine, project files found [here
  For our analysis purposes we were interested in the % of establishments by industry sector in each municipality applied for an PPP loan.  To do this analysis we combined the [2 Digit Sector: Employment data](https://datacommon.mapc.org/browser/datasets/387) from ES-202 along with the [municipal data keys](https://datacommon.mapc.org/browser/datasets/415) to provide supplementary regional info. That work was done in R and can be found [here](https://github.com/MAPC/paycheck-protection-program-ma/blob/master/PPP-data-join-script.R). The output from that work can be found [here:](https://github.com/MAPC/paycheck-protection-program-ma/blob/master/PPP-data-joined.csv)
 
  Total establishment data from [Annual Average Employment and Wages All Published Industries by town all ownership (ES-202 2018)](https://lmi.dua.eol.mass.gov/lmi/MunicipalEmploymentData/ExcelFile/2018townindEMPwagesbytownallown.xlsx) was joined in with Excel using a `VLOOKUP` on capitalized municaplity names. We also performed the following final data cleaning steps using Excel filters:
+  - Change `City` values "Manchester-by-the-Sea" to "Manchester" to unify data and eventually match into the spatial data
  - Remove rows with non-MA `STATE` values
- - Remove rows where the value for `City` was a ZIP code (one was updated from "02339" to "Hanover," as that ZIP code does not cross any other municipal lines)
- - Change `City` values "Manchester-by-the-Sea" to "Manchester" to unify data and eventually match into the spatial data
- - Remove rows where `City` equals "Devens"
- - Remove rows where `City` equals "Keene" (in New Hampshire) or "Pawtucket" (in Rhode Island)
+  - Remove rows where `City` equals "Keene" (in New Hampshire) or "Pawtucket" (in Rhode Island)
+ - Remove rows where the value for `City` was a ZIP code (one was updated from "02339" to "Hanover," as that ZIP code does not cross any other municipal lines. 4 rows were removed in total)
+ - Remove rows where `City` equals "Devens" (28 rows; unclear whether to attribute these rows to Ayer or Shirley on the municipal map)
  - Remove many unused columns for easier reading into the map
 
 Unique numeric IDs were assigned to each row to keep track of which rows were removed.
