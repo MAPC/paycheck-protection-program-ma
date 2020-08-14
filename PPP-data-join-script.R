@@ -1,6 +1,7 @@
 library(readr)
 library(dplyr)
 library(RPostgres)
+library(dotenv)
 
 
 # 1 - read data in from GitHub
@@ -17,7 +18,14 @@ mydata$Zip = sprintf("%05d", mydata$Zip)
 
 # 2 - read in municipal keys and es202 data from database
 #---------------------------------------------------------
-con_in <- dbConnect(RPostgres::Postgres(), host='pg.mapc.org', port='5432', dbname='ds', user='viewer', password='mapcview451')
+load_dot_env(file = ".env")
+HOST <- Sys.getenv("HOST")
+PORT <- Sys.getenv("PORT")
+DBNAME <- Sys.getenv("DBNAME")
+USER <- Sys.getenv("USER")
+PASSWORD <- Sys.getenv('PASSWORD')
+
+con_in <- dbConnect(RPostgres::Postgres(), hos=HOST, port=PORT, dbname=DBNAME, user=USER, password=PASSWORD)
 
 key_id = DBI::Id(schema='tabular', table='_datakeys_muni351')
 es202_id = DBI::Id(schema='tabular', table='econ_es202_naics_2d_m')

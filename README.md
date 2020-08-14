@@ -1,5 +1,7 @@
 # paycheck-protection-program-ma
  Cleaning and visualizing SBA-PPP data for Massachusetts
+
+ **Note:** To successfully run the R script, you'll need a `.env` file in the repo's root directory with appropriate database credentials.
  
 **Data Source** is from SBA (Last update date when download was July 7th 2020): https://home.treasury.gov/policy-issues/cares-act/assistance-for-small-businesses/sba-paycheck-protection-program-loan-level-data. The data which is self-reported from borrowers and was released differently for loans over 150k as it was for loans under 150k. Loans over 150K included business names and addresses and a range of money requested.  While loans under the threshold did not include names or address but did include loan amounts. Not all data fields were required and not all borrowers provided all information. This means important information for programmatic evaluating like demographic information of business owners was not fully captured.  For example, only 10% of Massachusetts borrowers in this data indicated race/ethnicity. The SBA over and under 150K were combined in Excel into one file. 
 
